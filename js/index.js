@@ -10,7 +10,7 @@ const todosToLS = arr => {
   let ls = localStorage.todoList;
 };
 
-if (ls == undefined) {
+if (localStorage.todoList === undefined) {
   todosToLS(todoList);
 }
 
