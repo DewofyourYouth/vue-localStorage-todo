@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Stuff</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="jumbotron">
+            <h1 class="display-2 text-center">Vue Todo</h1>
+            <h2 class="text-center"> -- Basic (w/ localStorage) --</h2>
+        </div>
+    </div>
+
+    <div id="app" class="container">
+        <h3 class="text-center">Instructions:</h3>
+        <p class="text-center">
+            to <strong>add</strong> a todo type in the input field and press enter<br>
+            to <strong>delete</strong> a todo click on the todo
+        </p>
+        <form v-on:submit.prevent="addTodo">
+            <input class="form-control" name="todo" type="text">
+            <ul class="list-group">
+                <li v-for="todo in todos" class="list-group-item text-center" :id="todo.index" @click="deleteTodo">
+                    {{todo.text}}
+                </li>
+            </ul>
+        </form>
+    </div>
+    <script src="js/vue.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
