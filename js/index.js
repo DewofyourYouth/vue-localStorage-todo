@@ -1,13 +1,7 @@
-let ls = localStorage.todoList;
-
-const todoList = [
-  { index: 0, text: 'drink coffee' },
-  { index: 1, text: 'write code' }
-];
+const todoList = [{ index: 0, item: 'Add a todo' }];
 
 const todosToLS = arr => {
   localStorage.todoList = JSON.stringify(arr);
-  let ls = localStorage.todoList;
 };
 
 if (localStorage.todoList === undefined) {
@@ -17,7 +11,7 @@ if (localStorage.todoList === undefined) {
 const app = new Vue({
   el: '#app',
   data: {
-    todos: JSON.parse(ls)
+    todos: JSON.parse(localStorage.todoList)
   },
   methods: {
     addTodo: function(e) {
