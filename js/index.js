@@ -1,11 +1,9 @@
-const todoList = [{ index: 0, item: 'Add a todo' }];
-
 const todosToLS = arr => {
   localStorage.todoList = JSON.stringify(arr);
 };
 
 if (localStorage.todoList === undefined) {
-  todosToLS(todoList);
+  todosToLS([]);
 }
 
 const app = new Vue({
@@ -23,7 +21,7 @@ const app = new Vue({
       e.target.todo.value = '';
     },
     deleteTodo: function(e) {
-      this.todos.pop(e.target.text);
+      this.todos.pop(e.target.id);
       todosToLS(this.todos);
     }
   }
