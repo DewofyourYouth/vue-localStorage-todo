@@ -33,12 +33,12 @@
         </p>
         <form v-on:submit.prevent="addTodo">
             <input class="form-control" name="todo" type="text">
-            <ul class="list-group">
-                <li v-for="todo in todos" class="list-group-item text-center" :id="todo.index" @click="deleteTodo">
-                    {{todo.text}}
-                </li>
-            </ul>
         </form>
+        <ul class="list-group">
+            <li v-for="todo in todos" class="list-group-item text-center" :id="todo.index" @click="deleteTodo">
+                {{todo.text}}
+            </li>
+        </ul>
     </div>
     <script src="js/vue.min.js"></script>
     <script src="js/index.js"></script>
